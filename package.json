@@ -1,0 +1,39 @@
+{
+  "name": "viajes-agua-api",
+  "version": "1.0.0",
+  "description": "API para gestión de viajes de agua",
+  "main": "server.js",
+  "scripts": {
+    "build": "babel src --out-dir dist && node copy-templates.js",
+    "start:server": "nodemon --exec npx babel-node src/server.js",
+    "start": "npm run build && node dist/server.js"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.28.6",
+    "babel-plugin-root-import": "^6.6.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "camaro": "^6.2.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^9.0.0",
+    "moment-timezone": "^0.5.45",
+    "mongoose": "^8.0.0",
+    "mongoose-aggregate-paginate-v2": "^1.0.6",
+    "mongoose-paginate-v2": "^1.7.1",
+    "mongoose-sequence": "^5.3.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/node": "^7.29.0",
+    "@babel/plugin-transform-runtime": "^7.29.0",
+    "@babel/preset-env": "^7.29.0",
+    "nodemon": "^3.0.1"
+  }
+}
