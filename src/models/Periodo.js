@@ -21,7 +21,7 @@ const periodoSchema = new mongoose.Schema({
   },
   estado: {
     type: String,
-    enum: ['activo', 'cerrado', 'pagado'],
+    enum: ['activo', 'cerrado', 'pagado','pendiente de pago'],
     default: 'activo'
   },
   fechaPago: {

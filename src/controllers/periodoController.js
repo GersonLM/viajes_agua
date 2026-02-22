@@ -105,7 +105,7 @@ exports.cerrarPeriodo = async (req, res) => {
 // Marcar período como pagado
 exports.marcarComoPagado = async (req, res) => {
   try {
-    const pagado = req.body
+    const pagado = req.body.pagado
     console.log('pagado',pagado)
     const periodo = await Periodo.findById(req.params.id);
     
@@ -123,6 +123,7 @@ exports.marcarComoPagado = async (req, res) => {
     
     res.json(periodo);
   } catch (error) {
+    console.log(error)
     res.status(500).json({ mensaje: 'Error al marcar período como pagado', error: error.message });
   }
 };
