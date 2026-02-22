@@ -114,6 +114,7 @@ exports.marcarComoPagado = async (req, res) => {
       return res.status(400).json({ mensaje: 'Debe cerrar el período antes de marcarlo como pagado' });
     }
     
+    
     periodo.estado = 'pagado';
     periodo.fechaPago = new Date();
     await periodo.save();
