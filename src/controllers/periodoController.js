@@ -1,3 +1,4 @@
+const { query } = require('express-validator');
 const Periodo = require('../models/Periodo');
 const Registro = require('../models/Registro');
 
@@ -104,6 +105,8 @@ exports.cerrarPeriodo = async (req, res) => {
 // Marcar período como pagado
 exports.marcarComoPagado = async (req, res) => {
   try {
+    const pagado = req.body
+    console.log('pagado',pagado)
     const periodo = await Periodo.findById(req.params.id);
     
     if (!periodo) {
@@ -114,8 +117,7 @@ exports.marcarComoPagado = async (req, res) => {
       return res.status(400).json({ mensaje: 'Debe cerrar el período antes de marcarlo como pagado' });
     }
     
-    
-    periodo.estado = 'pagado';
+    periodo.estado = pagado === true ? 'pagado' : 'pendiente de pago' ;
     periodo.fechaPago = new Date();
     await periodo.save();
     

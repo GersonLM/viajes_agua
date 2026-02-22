@@ -4,7 +4,7 @@
   "description": "API para gestión de viajes de agua",
   "main": "server.js",
   "scripts": {
-    "build": "babel src --out-dir dist && node copy-templates.js",
+    "build": "babel src --out-dir dist",
     "start": "node dist/server.js",
       "start:server": "nodemon --exec npx babel-node src/server.js"
   },
